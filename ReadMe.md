@@ -17,7 +17,7 @@ using UnityEngine;
 public class DrawLines : MonoBehaviour
 {
     // 頂点のリスト
-    private List<Vector3> vertics;
+    private List<Vector3> vertices;
 
     // 結ぶ頂点のインデックスのリスト　長さは偶数
     // 描画する際に配列に直すのであらかじめ長さが分かっている場合は配列でも可
@@ -27,15 +27,15 @@ public class DrawLines : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vertics = new List<Vector3>();
+        vertices = new List<Vector3>();
         indexes = new List<int>();
         _mesh = GetComponent<MeshFilter>().mesh;
 
         //とりあえず原点と(0,1,0)をつなく線
-        vertics.Add(new Vector3(0,0,0));
-        vertics.Add(new Vector3(0,1,0));
+        vertices.Add(new Vector3(0,0,0));
+        vertices.Add(new Vector3(0,1,0));
 
-        //verticsリストの　０番目と１番目　を繋ぐ
+        //verticesリストの　０番目と１番目　を繋ぐ
         indexes.Add(0);
         indexes.Add(1);
 
@@ -48,7 +48,7 @@ public class DrawLines : MonoBehaviour
 
     void drawLine()
     {
-        _mesh.SetVertices(vertics);
+        _mesh.SetVertices(vertices);
         _mesh.SetIndices(indexes.ToArray(), MeshTopology.Lines, 0);
         Graphics.DrawMesh(_mesh, transform.position, Quaternion.identity, _material, 0);
     }
@@ -58,11 +58,11 @@ public class DrawLines : MonoBehaviour
 * ## 2.好きな座標に線を描画する
 veticsとindexesを変更することで好きなところに描画できる.
 <br>
-indexesにはverticsに入れた頂点と対応するインデックスを入れる。
+indexesにはverticesに入れた頂点と対応するインデックスを入れる。
 線の始点と終点の2つでセット。
 <br>   
     例）
- * verticsの0,1,2,3の順に線を引きたい場合
+ * verticesの0,1,2,3の順に線を引きたい場合
 ```
     indexes = new List<int>(){0,1, 1,2, 2,3};
 ```

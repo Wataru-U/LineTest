@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DrawLines.cs" />
-     <Compile Include="Assets\Line.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/umezawa/Documents/Documents/unity/LineTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
