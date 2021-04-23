@@ -56,7 +56,7 @@ public class DrawLines : MonoBehaviour
 ```
 
 * ## 2.好きな座標に線を描画する
-veticsとindexesを変更することで好きなところに描画できる.
+verticsとindexesを変更することで好きなところに描画できる.
 <br>
 indexesにはverticesに入れた頂点と対応するインデックスを入れる。
 線の始点と終点の2つでセット。
